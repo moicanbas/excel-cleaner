@@ -54,7 +54,7 @@ def clean_dataframe(df):
     df.columns = clean_column_names(df.columns)
 
     # Trim string spaces
-    df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    df = df.map(lambda x: x.strip() if isinstance(x,str) else x)
 
     # Remove duplicated rows
     df = df.drop_duplicates()
